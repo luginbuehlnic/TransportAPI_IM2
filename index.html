@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transport API</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to Transport API</h1>
+    </header>
+    <main id="main">
+        <div id="connections">
+            <button id="ZurichChur" class="active">
+                <span class="connection">Zürich - Chur</span>
+            </button>
+            <button id="ChurZurich" class="active">
+                <span class="connection">Chur - Zürich</span>
+            </button>
+            <button id="StgallenChur" class="active">
+                <span class="connection">St. Gallen - Chur</span>
+            </button>
+            <button id="ChurStgallen" class="active">
+                <span class="connection">Chur - St. Gallen</span>
+            </button>
+        </div>
+        <div id="details">
+        <span id="name"></span><br>
+        <span id="duration"></span><br>
+        <h5>Von:</h5>
+        <span id="from"></span><br>
+        <span id="departure"></span><span id="platform"></span>
+        <h5>Nach:</h5>
+        <span id="to"></span><br>
+        <span id="arrival"></span><span id="arriveplt"></span>
+        </div>
+    </main>
+    <footer>
+       
+    </footer>
+    <script src="scripts/javascript.js" type="module"></script>
+</body>
+</html>

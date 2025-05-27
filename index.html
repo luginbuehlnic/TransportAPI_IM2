@@ -7,33 +7,48 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header>
-        <h1>Welcome to Transport API</h1>
+    <header class="header">
+        <h1 class="idH1">RAIL RUNNER</h1>
+        <a href="index.html">
+            <img class="svgLogo" src="img/RunnerLogo.svg" alt="RailRunner Logo">
+        </a>
     </header>
     <main id="main">
-        <div id="connections">
-            <button id="ZurichChur" class="active">
-                <span class="connection">Zürich - Chur</span>
-            </button>
-            <button id="ChurZurich" class="active">
-                <span class="connection">Chur - Zürich</span>
-            </button>
-            <button id="StgallenChur" class="active">
-                <span class="connection">St. Gallen - Chur</span>
-            </button>
-            <button id="ChurStgallen" class="active">
-                <span class="connection">Chur - St. Gallen</span>
-            </button>
+        <div class="headline">
+            <h1 class="idH1">Wo gahts ane?</h1>
         </div>
-        <div id="details">
-        <span id="name"></span><br>
-        <span id="duration"></span><br>
-        <h5>Von:</h5>
-        <span id="from"></span><br>
-        <span id="departure"></span><span id="platform"></span>
-        <h5>Nach:</h5>
-        <span id="to"></span><br>
-        <span id="arrival"></span><span id="arriveplt"></span>
+        <div class="connectionBox">
+            <div id="from" class="connection">
+                <p class="connectionSubtitle">Von:</p>
+                <div class="trainStations">
+                    <button id="FromZurich" class="stationButton">
+                        Zürich
+                    </button>
+                    <button id="FromChur" class="stationButton">
+                        Chur
+                    </button>
+                    <button id="FromStGallen" class="stationButton">
+                        St. Gallen
+                    </button>
+                </div>
+            </div>
+            <div id="to" class="connection">
+                <p>Nach:</p>
+                <div class="trainStations">
+                    <button id="ToZurich" class="stationButton">
+                        Zürich
+                    </button>
+                    <button id="ToChur" class="stationButton">
+                        Chur
+                    </button>
+                    <button id="ToStGallen" class="stationButton">
+                        St.Gallen
+                    </button>
+                </div>
+            </div>
+        </div>
+        <img src="img/RunnerLogo.svg" alt="Zug fährt" id="loadingTrain" />
+        <div class="trainBox">
         </div>
     </main>
     <footer>

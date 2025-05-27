@@ -1,0 +1,270 @@
+@font-face {
+    font-family: 'HelveticaNeue';
+    src: url('./HelveticaNeue') /*format('truetype')*/;
+}
+
+:root {
+    --primary-color: #789BF3;
+    --secondary-color: #fff;
+}
+
+* {
+    font-family: 'HelveticaNeue', sans-serif;
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+}
+
+html, body{
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--primary-color);
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.header{
+    margin-top: 29px;
+    margin-left: 59px;
+    flex-shrink: 0;
+}
+
+.headline{
+    margin-bottom: 10px;
+}
+
+.idH1{
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 0;
+    margin-top: 20px;
+}
+
+.svgLogo{
+    width: 233.5px; /*934px*/
+    height: 64.5px; /*258px*/
+    flex-shrink: 0;
+    aspect-ratio: 1/1;
+}
+
+.headline{
+    display: flex;
+}
+
+.headline h1{
+    flex: 1;
+    text-align: center;
+}
+
+.connectionBox{
+    width: 748px;
+    height: 350px;
+    flex-shrink: 0;
+    border-radius: 50px;
+    background: var(--secondary-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+    gap: 50px;
+}
+
+.connection{
+    display: flex;
+    align-items: center;
+    margin: 20px;
+    border-bottom: black 1px solid;
+}
+
+.connection p{
+    color: black;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin: 0;
+    margin-right: 10px;
+}
+
+.stationButton{
+    width: 146px;
+    height: 44px;
+    flex-shrink: 0;
+    border-radius: 50px;
+    background: var(--primary-color);
+    border: none;
+    margin: 5px;
+}
+
+.stationButton:hover{
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.stationButton.active{
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    border: 1px solid #789BF3;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+/* loading animation */
+
+#loadingTrain{
+    position: fixed;
+    top: 70%; 
+    left: -200px;
+    width: 400px;
+    height: auto;
+    z-index: 9999;
+    display: none;
+    animation: moveTrain 1.5s linear infinite;
+}
+
+@keyframes moveTrain {
+    0% {
+        left: -200px;
+    }
+    100% {
+        left: 100vw;
+    }
+}
+
+/* Train Details */
+
+.trainBox{
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+.singleBox {
+    background: white;
+    border-radius: 40px;
+    padding: 20px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 600px;
+    margin-bottom: 30px;
+}
+
+.singleBox p{
+    color: black;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin: 0;
+}
+
+.trainName{
+    flex: 1;
+    margin-right: 35px;
+    text-align: end;
+}
+
+.smallTrain{
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.topBox {
+    display: flex;
+    flex-direction: row;
+}
+
+.bottomBox {
+    display: flex;
+    flex-direction: row;
+}
+
+.detailBox{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.detailBox p{
+    margin-left: 10px;
+}
+
+.lineDot img {
+    width: 400px;
+    height: auto;
+    color: black;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    background: black;
+    border-radius: 50%;
+}
+
+.line {
+    height: 2px;
+    background: black;
+    flex-grow: 1;
+}
+
+.platform {
+    font-weight: bold;
+    font-size: 14px;
+    margin-right: 10px;
+}
+
+.warningBox{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 30px;
+}
+
+.warningBox h2{
+    font-size: 40px;
+    font-weight: 700;
+    margin: 0;
+    margin-bottom: 20px;
+}
+
+.warningBox h3{
+    font-size: 30px;
+    font-weight: 400;
+    margin: 0;
+    margin-top: 20px;
+}
+
+.warningBox p{
+    font-size: 20px;
+    font-weight: 300;
+    margin: 0;
+    margin-top: 10px;
+}
+
+#questionIcon{
+    height: 300px;
+    width: auto
+}

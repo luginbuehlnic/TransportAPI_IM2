@@ -7,6 +7,7 @@ const connectionBox = document.querySelector('.connectionBox');
 let selectedFrom = '';
 let selectedTo = '';   
 
+// Add event listeners to station buttons
 stationButtons.forEach(button => {
     button.addEventListener('click', () => {
         const id = button.id;
@@ -24,10 +25,9 @@ stationButtons.forEach(button => {
     });
 })
 
-async function init() {
+async function init() {}
 
-}
-
+//Get the selected Stations
 async function updateSelection(group, stationName) {
     trainBoxContainer.innerHTML = '';
     if(group === 'from') {
@@ -43,6 +43,7 @@ async function updateSelection(group, stationName) {
     }
 }
 
+// Show a warning if the same station is selected
 async function sameStationWarning(station) {
     trainBoxContainer.innerHTML = '';
     const warningBox = document.createElement('div');
@@ -60,9 +61,13 @@ async function sameStationWarning(station) {
     }
 }
 
+// Call Transport API and Load connections
 async function loadConnections(from, to){
     const url = `http://transport.opendata.ch/v1/connections?from=${from}&to=${to}&limit=15`
-
+    if(window.screen.width <= 850 && trainBoxContainer){
+            trainBoxContainer.setAttribute('style', 'height: 50vh; overflow-y: auto;');
+            trainBoxContainer.scrollIntoView({ behavior: 'smooth' });
+    }
     loadingTrain.style.display = 'block';
 
     try {
@@ -87,7 +92,9 @@ async function loadConnections(from, to){
     }
 }
 
+// Read Data from response and Display connections in the train box
 async function dispayConnections(connections) {
+    trainBoxContainer.setAttribute('style', 'height: auto; overflow-y: auto;');
     trainBoxContainer.innerHTML = '';
     connections.forEach(conn => {
         const fromTime = conn.from.departure.substring(11, 16);
@@ -137,6 +144,7 @@ async function dispayConnections(connections) {
     })
 }
 
+// Format Duration into hours and minutes
 async function formatDuration(duration) {
     const parts = duration.split('d')[1].split(':');
     const hours = parseInt(parts[0], 10);
